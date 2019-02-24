@@ -55,4 +55,5 @@ String 类是一个不可变类，即一旦一个 String 对象被创建后，�
 StringBuffer 对象则代表一个字符序列可变的字符串，通过 append()、insert()、reverse()、setCharAt()、setLength() 等方法可以改变这个字符串对象的字符序列。最后通过 toString() 方法将其转换为一个 String 对象
 StringBuilder 和 StringBuffer 类似，只是 StringBuilder 没有线程安全功能，性能略高
 
+### 
 
