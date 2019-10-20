@@ -49,4 +49,5 @@ public class Address
     {
         return detail.hashCode() + postCode.hashCode() * 31;
     }
+    // 。。。
 }
