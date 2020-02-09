@@ -1,6 +1,6 @@
 package unit06_oo2.c64_final;
 
-public class Fina1Loca1Variab1eTest
+public class FinalLocalVariableTest
 {
     public void test(final int a)
     {
