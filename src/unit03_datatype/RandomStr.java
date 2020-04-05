@@ -1,13 +1,12 @@
 package unit03_datatype;
 
-public class RandomStr 
+public class RandomStr
 {
-
 	/**
 	 * 生成一个6 位的随机字符串
 	 * @param args
 	 */
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		// 定义一个空字符串
 		String result = "";
@@ -21,9 +20,9 @@ public class RandomStr
 		}
 		//输出随机字符串
 		System.out.println(result);
-		
-		//直接把5.6 赋值给f10at 类型变量将出现错误， 因为5 . 6 默认是doub1e 类型
-		// float a = 5.6;
-	}
 
+		//直接把5.6 赋值给 f1oat 类型变量将出现错误， 因为 5.6 默认是 doub1e 类型
+		// float a = 5.6;
+		float a = (float)5.6;
+	}
 }

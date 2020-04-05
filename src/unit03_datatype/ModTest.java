@@ -2,8 +2,7 @@ package unit03_datatype;
 
 public class ModTest 
 {
-
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		double a = 5.2;
 		double b = 3.1;
@@ -16,5 +15,4 @@ public class ModTest
 		// 下面代码将出现异常: java.1ang . ArithmeticException : by zero
 		System.out.println( "-5 对0 求余的结果是:" + -5 % 0) ;
 	}
-
 }

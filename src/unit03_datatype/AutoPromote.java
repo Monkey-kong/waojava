@@ -2,8 +2,7 @@ package unit03_datatype;
 
 public class AutoPromote 
 {
-
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		short sValue = 5;
 		// 表达式中的 sValue 将自动提升到 int 类型，则右边的表达式类型为 int
@@ -31,5 +30,4 @@ public class AutoPromote
 		// 输出字符串104Hell o !
 		System.out.println('a' + 7 + "Hello!");
 	}
-
 }

@@ -2,8 +2,7 @@ package unit03_datatype;
 
 public class AutoConcersion 
 {
-
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		byte byteValue = 10;
 		short shortValue = byteValue;
@@ -25,5 +24,4 @@ public class AutoConcersion
 		System.out.println("doubleValue:"+doubleValue);
 		System.out.println("doubleValue2:"+doubleValue2);
 	}
-
 }

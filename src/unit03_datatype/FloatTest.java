@@ -2,8 +2,7 @@ package unit03_datatype;
 
 public class FloatTest 
 {
-
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		float af = 5.2345556f;
 		// af 的值已经该改变
@@ -26,5 +25,4 @@ public class FloatTest
 		// 下面代码将抛出除以0 的异常
 		// System.out .println(O / 0);
 	}
-
 }

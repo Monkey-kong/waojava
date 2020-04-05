@@ -41,10 +41,9 @@ public class IntegerValTest
 		// byte binVal5 = 0B10000000000000000000000000000011;
 		// long型第64位才是符号位
 		long binVal6 = 0B10000000000000000000000000000011; 
-		System.out.println("binVal6:" + binVal6); // 2的31次方 + 3 = 2147483648 + 3（计算错误）
+		System.out.println("binVal6:" + binVal6); // -2147483645
 		// 要用二机制表示long，需要用L
 		long binVal7 = 0B10000000000000000000000000000011L;
 		System.out.println("binVal7:" + binVal7); // 2的31次方 + 3 = 2147483648 + 3
 	}
-
 }

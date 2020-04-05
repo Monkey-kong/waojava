@@ -2,8 +2,7 @@ package unit03_datatype;
 
 public class NarrowConversion 
 {
-
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		int iValue = 233;
 		// 强制把一个int 类型的值转换为byte 类型的值
@@ -16,5 +15,4 @@ public class NarrowConversion
 		// 将输出3
 		System.out.println(tol);
 	}
-
 }
