@@ -1,5 +1,8 @@
 package unit16_thread.p16_9;
 
+/**
+ * 线程局部变量
+ */
 class Account{
     // 定义 ThreadLocal
     private ThreadLocal<String> name = new ThreadLocal<>();
@@ -23,9 +26,9 @@ class MyTest extends Thread {
     }
     public void run() {
         for (int i = 0; i < 10; i++) {
-            if(i == 6){
+            //if(i == 6){
                 account.setName(getName());
-            }
+            //}
             System.out.println(account.getName()
                     + " 账户的 i 值：" + i);
         }

@@ -7,8 +7,9 @@ public class GcTest {
         {
             new GcTest();
             //System.gc();
-            Runtime.getRuntime().gc();
+            // Runtime.getRuntime().gc();
         }
+        System.gc();
     }
     @Override
     public void finalize()
