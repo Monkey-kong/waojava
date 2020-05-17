@@ -1,4 +1,4 @@
-package unit15_javaio;
+package unit15_javaio.c8;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -6,12 +6,10 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 public class Person implements Serializable{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
-	private String name;
-	private int age;
+	private transient String name;
+	private transient int age;
 	public Person(String name, int age)
 	{
 		System.out.println("有参构造器");

@@ -1,4 +1,4 @@
-package unit15_javaio;
+package unit15_javaio.c9;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -6,7 +6,6 @@ import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
 
 public class FileLockTest {
-
 	public static void main(String[] args) throws IOException, InterruptedException {
 		try(
 			@SuppressWarnings("resource")
@@ -18,5 +17,4 @@ public class FileLockTest {
 			lock.release();
 		}
 	}
-
 }

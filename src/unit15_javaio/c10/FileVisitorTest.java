@@ -1,4 +1,4 @@
-package unit15_javaio;
+package unit15_javaio.c10;
 
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
@@ -9,9 +9,8 @@ import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 
 public class FileVisitorTest {
-
 	public static void main(String[] args) throws IOException {
-		Files.walkFileTree(Paths.get("E:/1_workspace/workspace/waojava"), new SimpleFileVisitor<Path>()
+		Files.walkFileTree(Paths.get("D:\\01_code\\01_javasebasic\\waojava"), new SimpleFileVisitor<Path>()
 		{
 			public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException
 			{
@@ -31,5 +30,4 @@ public class FileVisitorTest {
 			}
 		});
 	}
-
 }

@@ -1,4 +1,4 @@
-package unit15_javaio;
+package unit15_javaio.c9;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -9,13 +9,14 @@ import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
+import java.nio.charset.StandardCharsets;
 
 public class FileChannelTest {
-
 	public static void main(String[] args) {
-		File f = new File("./src/unit15_javaio/FileChannelTest.java");
+		File f = new File("./src/unit15_javaio/c9/FileChannelTest.java");
 		try(
 			FileInputStream fis = new FileInputStream(f);
+			// 获取 Channel
 			FileChannel inChannel = fis.getChannel();
 			FileChannel outChannel = new FileOutputStream("1.txt").getChannel())
 		{
@@ -23,7 +24,7 @@ public class FileChannelTest {
 			outChannel.write(buffer);
 			buffer.clear();
 			// 创建解码器对象
-			Charset charset = Charset.forName("UTF-8");
+			Charset charset = StandardCharsets.UTF_8;
 			CharsetDecoder decoder = charset.newDecoder();
 			// 使用解码器将 ByteBuffer 转换为 CharBuffer
 			CharBuffer charBuffer = decoder.decode(buffer);
@@ -34,5 +35,4 @@ public class FileChannelTest {
 			ex.printStackTrace();
 		}
 	}
-
 }
