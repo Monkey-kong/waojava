@@ -1,4 +1,4 @@
-package unit13_jdbc;
+package unit13_jdbc.c4;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -6,8 +6,7 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.util.Properties;
 
-public class ExecuteDML {
-
+public class ExecuteDDL {
 	private String driver;
 	private String url;
 	private String user;
@@ -21,23 +20,23 @@ public class ExecuteDML {
 		user = props.getProperty("user");
 		pass = props.getProperty("pass");
 	}
-	public int insertData(String sql) throws Exception
+	public void createTable(String sql) throws Exception
 	{
 		Class.forName(driver);
 		try(
 			Connection conn = DriverManager.getConnection(url, user, pass);
 			Statement stmt = conn.createStatement())
 		{
-			return stmt.executeUpdate(sql);
+			stmt.executeUpdate(sql);
 		}
 	}
-	
 	public static void main(String[] args) throws Exception {
-		ExecuteDML ed = new ExecuteDML();
+		ExecuteDDL ed = new ExecuteDDL();
 		ed.initParam("./src/unit13_jdbc/mysql.ini");
-		int result = ed.insertData("insert into jdbc_test (jdbc_name,jdbc_desc)"
-				+ "select student_name,student_age from student_table;");
-		System.out.println("一共有" + result + "条就受到影响");
+		ed.createTable("create table jdbc_test"
+				+ "( jdbc_id int auto_increment primary key, "
+				+ "jdbc_name varchar(255), "
+				+ "jdbc_desc text);");
+		System.out.println("建表成功");
 	}
-
 }

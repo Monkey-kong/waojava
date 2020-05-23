@@ -1,4 +1,4 @@
-package unit13_jdbc;
+package unit13_jdbc.c8;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -31,6 +31,7 @@ public class DatabaseMetaDataTest {
 		try(
 			Connection conn = DriverManager.getConnection(url, user, pass))
 		{
+			// 获取 DatabaseMetaData 对象
 			DatabaseMetaData dbmd = conn.getMetaData();
 			ResultSet rs = dbmd.getTableTypes();
 			System.out.println("---MySql支持的表类型信息---");
@@ -38,11 +39,15 @@ public class DatabaseMetaDataTest {
 			rs = dbmd.getTables(null, null, "%", new String[]{"TABLE"});
 			System.out.println("---当前数据库里的数据表信息---");
 			printResultSet(rs);
-			rs = dbmd.getPrimaryKeys(null, null, "jdbc_test");
-			System.out.println("---jdbc_test 表的主键信息---");
+			rs = dbmd.getPrimaryKeys(null, null, "student_table");
+			System.out.println("---student_table 表的主键信息---");
 			printResultSet(rs);
-			rs = dbmd.getProcedures(null, null, "%");
+			rs = dbmd.getProcedures(null, null, "%add_pro%");
 			System.out.println("---当前数据库里的存储过程信息---");
+			printResultSet(rs);
+			rs = dbmd.getCrossReference(null,null,"teacher_table",
+					null, null, "student_table");
+			System.out.println("---teacher_table 和 student_table之间的外键约束---");
 			printResultSet(rs);
 			rs = dbmd.getColumns(null, null, "student_table", "%");
 			System.out.println("---student_table 表的全部数据列---");

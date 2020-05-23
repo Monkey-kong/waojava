@@ -1,4 +1,4 @@
-package unit13_jdbc;
+package unit13_jdbc.c7;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -46,9 +46,10 @@ public class TransactionTest {
 		TransactionTest tt = new TransactionTest();
 		tt.initParam("./src/unit13_jdbc/mysql.ini");
 		String[] sqls = new String[]{
-				"insert into student_table values(3,'aaa',1)",
-				"insert into student_table values(4,'bbb',1)",
-				"insert into student_table values(5,'ccc','c')"
+				"insert into student_table(student_name,java_teacher) values('aaa',1)",
+				"insert into student_table(student_name,java_teacher) values('bbb',1)",
+				// 违反外键约束
+				"insert into student_table(student_name,java_teacher) values('ccc',5)"
 		};
 		tt.insertInTransaction(sqls);
 	}

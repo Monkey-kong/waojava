@@ -1,4 +1,4 @@
-package unit13_jdbc;
+package unit13_jdbc.c4;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -32,7 +32,7 @@ public class PreparedStatementTest {
 		{
 			for (int i=0; i < 100; i++)
 			{
-				stmt.executeUpdate("insert into student_table(student_name,student_age) values('姓名" + i + "',20)");
+				stmt.executeUpdate("insert into student_table(student_name,java_teacher) values('姓名" + i + "',20)");
 			}
 			System.out.println("使用 Statement 费时：" + (System.currentTimeMillis() - start));
 		}
@@ -43,7 +43,7 @@ public class PreparedStatementTest {
 		long start = System.currentTimeMillis();
 		try(
 			Connection conn = DriverManager.getConnection(url, user, pass);
-			PreparedStatement pstmt = conn.prepareStatement("insert into student_table(student_name,student_age) values(?,1)"))
+			PreparedStatement pstmt = conn.prepareStatement("insert into student_table(student_name,java_teacher) values(?,1)"))
 		{
 			for (int i=0; i < 100; i++)
 			{

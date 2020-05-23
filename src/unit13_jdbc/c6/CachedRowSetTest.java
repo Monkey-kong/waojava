@@ -1,4 +1,4 @@
-package unit13_jdbc;
+package unit13_jdbc.c6;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -35,7 +35,9 @@ public class CachedRowSetTest {
 		ResultSet rs = stmt.executeQuery(sql);
 		RowSetFactory factory = RowSetProvider.newFactory();
 		CachedRowSet cachedRs = factory.createCachedRowSet();
+		// 使用 ResultSet 填装 RowSet
 		cachedRs.populate(rs);
+		// 关闭资源
 		rs.close();
 		stmt.close();
 		conn.close();
@@ -52,12 +54,14 @@ public class CachedRowSetTest {
 			System.out.println(rs.getString(1) + "\t" + rs.getString(2) + "\t" + rs.getString(3));
 			if (rs.getInt("student_id") == 2)
 			{
-				rs.updateString("student_name", "孙苦苦");
+				rs.updateString("student_name", "孙悟空");
 				rs.updateRow();
 			}
 		}
+		// 重新获取数据库连接
 		Connection conn = DriverManager.getConnection(url, user, pass);
 		conn.setAutoCommit(false);
+		// 把对 RowSet 所做的修改同步到底层数据库
 		rs.acceptChanges(conn);
 	}
 

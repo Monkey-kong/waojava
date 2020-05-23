@@ -1,4 +1,4 @@
-package unit13_jdbc;
+package unit13_jdbc.c6;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -32,14 +32,20 @@ public class CachedRowSetPage {
 	{
 		try(
 			Connection conn = DriverManager.getConnection(url, user, pass);
-			Statement stmt = conn.createStatement();
+			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
 			ResultSet rs = stmt.executeQuery(sql))
 		{
 			RowSetFactory factory = RowSetProvider.newFactory();
 			CachedRowSet cachedRs = factory.createCachedRowSet();
+			// 设置煤业显示 pagesize 条记录
 			cachedRs.setPageSize(pageSize);
+			// 从指定位置开始装
 			cachedRs.populate(rs, (page - 1) * pageSize + 1);
 //			cachedRs.populate(rs);
+
+			cachedRs.nextPage();
+			// 也不行
+			// cachedRs.previousPage();
 			return cachedRs;
 		}
 	}
