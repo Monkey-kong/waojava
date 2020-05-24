@@ -1,4 +1,4 @@
-package unit7_basicclasss.c71;
+package unit7_basicclasss.c1;
 
 public class ArgsTest {
 

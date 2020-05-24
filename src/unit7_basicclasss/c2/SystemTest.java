@@ -1,4 +1,4 @@
-package unit7_basicclasss.c72;
+package unit7_basicclasss.c2;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -27,8 +27,14 @@ public class SystemTest {
         System.gc();
         System.runFinalization();
 
+        System.out.println(System.currentTimeMillis());
+        System.out.println(System.nanoTime());
+
+
         System.out.println("aaa");
         System.err.println("bbb");
         System.in.read();
+
+
     }
 }

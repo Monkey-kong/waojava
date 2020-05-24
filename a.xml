@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-05-24T12:35:53.209462900Z</date>
+  <millis>1590323753209</millis>
+  <nanos>462900</nanos>
+  <sequence>0</sequence>
+  <logger>fkjava</logger>
+  <level>INFO</level>
+  <class>unit7_basicclasss.c7.LoggerI18N</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>普通信息</message>
+  <key>info</key>
+  <catalog>unit7_basicclasss.c7.i18n.mess</catalog>
+</record>
+<record>
+  <date>2020-05-24T12:35:53.269849300Z</date>
+  <millis>1590323753269</millis>
+  <nanos>849300</nanos>
+  <sequence>1</sequence>
+  <logger>fkjava</logger>
+  <level>SEVERE</level>
+  <class>unit7_basicclasss.c7.LoggerI18N</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>错误信息</message>
+  <key>error</key>
+  <catalog>unit7_basicclasss.c7.i18n.mess</catalog>
+</record>
+</log>
