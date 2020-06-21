@@ -8,8 +8,8 @@ import java.io.Serializable;
 public class Person implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	private transient String name;
-	private transient int age;
+	private /*transient*/ String name;
+	private /*transient*/ int age;
 	public Person(String name, int age)
 	{
 		System.out.println("有参构造器");
@@ -29,17 +29,17 @@ public class Person implements Serializable{
 		this.age = age;
 	}
 	
-	private void writeObject(ObjectOutputStream out) throws IOException
-	{
-		out.writeObject(new StringBuffer(name).reverse());
-		out.writeInt(age);
-	}
-	
-	private void readObject(ObjectInputStream in) throws ClassNotFoundException, IOException 
-	{
-		this.name = ((StringBuffer)in.readObject()).reverse().toString();
-		this.age = in.readInt();
-	}
+//	private void writeObject(ObjectOutputStream out) throws IOException
+//	{
+//		out.writeObject(new StringBuffer(name).reverse());
+//		out.writeInt(age);
+//	}
+//
+//	private void readObject(ObjectInputStream in) throws ClassNotFoundException, IOException
+//	{
+//		this.name = ((StringBuffer)in.readObject()).reverse().toString();
+//		this.age = in.readInt();
+//	}
 	
 //	private Object writeReplace() 
 //	{

@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class WriteToProcess {
 
 	public static void main(String[] args) throws IOException {
-		Process p = Runtime.getRuntime().exec("java D:\\01_code\\01_javasebasic\\waojava\\src\\unit15_javaio\\c6\\ReadStandard");
+		Process p = Runtime.getRuntime().exec("java D:\\01_code\\01_javasebasic\\waojava\\bin\\unit15_javaio\\c6\\ReadStandard");
 		try(
 			// 以 p 进程的输出流创建 PrintStream
 			// 这个 ps 对本程序是输出流,对p进程是输入流

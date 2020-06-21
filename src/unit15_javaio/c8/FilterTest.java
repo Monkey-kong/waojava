@@ -10,7 +10,8 @@ import java.io.ObjectInputStream;
  */
 public class FilterTest {
     public static void main(String[] args) {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("object.txt"))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("object.txt")))
+        {
             ois.setObjectInputFilter((info) -> {
                 System.out.println("===执行数据过滤===");
                 ObjectInputFilter serialFilter = ObjectInputFilter.Config.getSerialFilter();
@@ -34,6 +35,7 @@ public class FilterTest {
                 }
                 if (info.serialClass() != null &&
                     info.serialClass() != Person.class) {
+                    System.out.println(info.serialClass());
                     System.out.println("The object is not the Person class.");
                     // 不允许恢复对象
                     return ObjectInputFilter.Status.REJECTED;

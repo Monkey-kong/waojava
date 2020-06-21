@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.*;
+import java.nio.channels.spi.SelectorProvider;
 import java.nio.charset.Charset;
 
 /**
@@ -30,11 +31,13 @@ public class NServer {
         // 将 server 注册到指定的 Selector 对象
         ssc.register(selector, SelectionKey.OP_ACCEPT);
 
+        // select 阻塞
         while (selector.select() > 0) {
             System.out.println("select()>0");
             System.out.println(selector.selectedKeys());
             // 处理已选择的 SelectionKey
             for(SelectionKey sk : selector.selectedKeys()) {
+                System.out.println("attachment："+sk.attachment());
                 // 从 selector 上已选择的key集合删除当前key
                 selector.selectedKeys().remove(sk);
                 // 如果 sk 对应的 Channel 包含客户端的连接请求
@@ -52,6 +55,7 @@ public class NServer {
                 // 如果 sk 对应的 Channel 有数据需要读取
                 if(sk.isReadable()) {
                     System.out.println("sk isReadable");
+                    sk.attach("sk server read attach");
                     // 读取该 SelectKey 对应的 Channel
                     SocketChannel sc = (SocketChannel) sk.channel();
                     // 定义准备执行读取数据的 ByteBuffer
@@ -93,6 +97,7 @@ public class NServer {
                 }
             }
         }
+        System.out.println("====> app finished...");
     }
 
     public static void main(String[] args) throws IOException {

@@ -27,6 +27,8 @@ public class NClient {
         InetSocketAddress isa = new InetSocketAddress("127.0.0.1", PORT);
         // 调用 open 静态方法创建连接到指定主机的 SocketChannel
         sc = SocketChannel.open(isa);
+        final int i = sc.validOps();
+        System.out.println("sc validOps：" + i); // 1 + 4 + 8 = 13
         // 设置 sc 以非阻塞方式工作
         sc.configureBlocking(false);
         // 将 SocketChannel 对象注册到指定的 Selector

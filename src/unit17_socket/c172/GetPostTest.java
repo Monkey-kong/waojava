@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.URLPermission;
 import java.util.List;
 import java.util.Map;
 
@@ -106,8 +107,8 @@ public class GetPostTest {
         System.out.println("====>GET响应结果：");
         System.out.println(s);
         // 发送 POST 请求
-        final String s1 = GetPostTest.sendPost("http://wiki.monkey-kong.cn/", null);
-        System.out.println("====>POST响应结果：");
-        System.out.println(s1);
+//        final String s1 = GetPostTest.sendPost("http://www.baidu.com/", null);
+//        System.out.println("====>POST响应结果：");
+//        System.out.println(s1);
     }
 }
