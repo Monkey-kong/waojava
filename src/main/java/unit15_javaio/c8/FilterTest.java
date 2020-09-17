@@ -10,8 +10,7 @@ import java.io.ObjectInputStream;
  */
 public class FilterTest {
     public static void main(String[] args) {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("object.txt")))
-        {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("object.txt"))) {
             ois.setObjectInputFilter((info) -> {
                 System.out.println("===执行数据过滤===");
                 ObjectInputFilter serialFilter = ObjectInputFilter.Config.getSerialFilter();
@@ -44,8 +43,7 @@ public class FilterTest {
             });
             // 从输入流中读取一个 Java 对象, 并强制转换为 Person 类
             Person p = (Person)ois.readObject();
-            System.out.println("名字为:" + p.getName() +
-                "\n年龄为:" + p.getAge());
+            System.out.println("名字为:" + p.getName() + "\n年龄为:" + p.getAge());
         } catch (Exception ex) {
             ex.printStackTrace();
         }

@@ -6,6 +6,7 @@ import java.io.StringWriter;
 
 /**
  * @author Alvin.Li
+ * 访问字符串：StringReader、StringWriter
  * StringReader：直接以 String 作为构造器参数
  */
 public class StringNodeTest {

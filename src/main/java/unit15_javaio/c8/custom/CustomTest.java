@@ -12,10 +12,8 @@ import java.io.ObjectOutputStream;
  */
 public class CustomTest {
     public static void main(String[] args) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(
-                new FileOutputStream("custom.txt"));
-             ObjectInputStream ois = new ObjectInputStream(
-                     new FileInputStream("custom.txt"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream (new FileOutputStream("custom.txt"));
+             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("custom.txt"))) {
             Person per = new Person("Alvin", 26);
             oos.writeObject(per);
             Person p = (Person)ois.readObject();

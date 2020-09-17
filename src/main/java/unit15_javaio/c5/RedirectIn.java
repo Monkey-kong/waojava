@@ -6,10 +6,12 @@ import java.util.Scanner;
 
 /**
  * @author Alvin.Li
+ * 重定向标准输入
  */
 public class RedirectIn {
 	public static void main(String[] args) {
 		try (FileInputStream fis = new FileInputStream("./src/main/java/unit15_javaio/c5/RedirectIn.java")) {
+			// 本来标准输入时键盘输入，现在重定向为 fis
 			System.setIn(fis);
 			@SuppressWarnings("resource")
 			Scanner sc = new Scanner(System.in);

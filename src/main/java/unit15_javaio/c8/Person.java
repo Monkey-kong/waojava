@@ -1,10 +1,10 @@
 package unit15_javaio.c8;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
+/**
+ * @author Alvin.Li
+ */
 public class Person implements Serializable{
 
 	private static final long serialVersionUID = 1L;
