@@ -1,11 +1,11 @@
-package unit15_javaio.c8;
+package unit15_javaio.c8.objstream;
 
 import java.io.Serializable;
 
 /**
  * @author Alvin.Li
  */
-public class Person implements Serializable{
+public class Person extends Human implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	private /*transient*/ String name;

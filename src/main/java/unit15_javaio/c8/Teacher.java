@@ -1,5 +1,7 @@
 package unit15_javaio.c8;
 
+import unit15_javaio.c8.objstream.Person;
+
 import java.io.Serializable;
 
 /**
