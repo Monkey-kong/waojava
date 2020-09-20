@@ -1,6 +1,5 @@
 package unit18_classload.c5;
 
-import java.lang.ref.PhantomReference;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;

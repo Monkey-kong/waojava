@@ -8,10 +8,11 @@ import java.sql.Statement;
 public class ConnMySql {
 	public static void main(String[] args) throws Exception{
 		// 1.加载驱动，使用反射知识
-		Class.forName("com.mysql.cj.jdbc.Driver");
+		// Class.forName("com.mysql.cj.jdbc.Driver");
 		try(
 			// 2.使用 DriverManager 获取数据库连接
-			Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/test?useSSL=false&serverTimezone=Hongkong", "root", "Pass9876");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/test?" +
+					"useSSL=false&serverTimezone=Hongkong&allowPublicKeyRetrieval=true", "root", "Pass9876");
 			// 3.使用 Connection 来创建一个 Statement 对象
 			Statement stmt = conn.createStatement();
 			// 4.执行 SQL 语句
