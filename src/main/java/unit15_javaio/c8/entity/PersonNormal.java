@@ -1,16 +1,18 @@
-package unit15_javaio.c8.objstream;
+package unit15_javaio.c8.entity;
+
+import unit15_javaio.c8.objstream.Human;
 
 import java.io.Serializable;
 
 /**
  * @author Alvin.Li
  */
-public class Person extends Human implements Serializable{
+public class PersonNormal extends Human implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	private /*transient*/ String name;
 	private /*transient*/ int age;
-	public Person(String name, int age)
+	public PersonNormal(String name, int age)
 	{
 		System.out.println("有参构造器");
 		this.name = name;

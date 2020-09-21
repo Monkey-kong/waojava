@@ -1,6 +1,7 @@
-package unit15_javaio.c8;
+package unit15_javaio.c8.serialmechanism;
 
-import unit15_javaio.c8.objstream.Person;
+import unit15_javaio.c8.entity.PersonNormal;
+import unit15_javaio.c8.entity.Teacher;
 
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
@@ -12,11 +13,12 @@ import java.io.ObjectInputStream;
 public class ReadTeacher {
     public static void main(String[] args) {
         // 创建一个 ObjectInputStream 输入流
-        try(final ObjectInputStream ois = new ObjectInputStream(new FileInputStream("teacher.txt"))) {
+        try (final ObjectInputStream ois = new ObjectInputStream(
+                new FileInputStream("./src/main/java/unit15_javaio/c8/serialmechanism/teacher.txt"))) {
             // 依次读取 ObjectInputStream 输入流中的四个对象
             Teacher t1 = (Teacher)ois.readObject();
             Teacher t2 = (Teacher)ois.readObject();
-            Person p = (Person)ois.readObject();
+            PersonNormal p = (PersonNormal)ois.readObject();
             Teacher t3 = (Teacher)ois.readObject();
 
             // 输出 true

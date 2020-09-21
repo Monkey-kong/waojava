@@ -1,6 +1,4 @@
-package unit15_javaio.c8;
-
-import unit15_javaio.c8.objstream.Person;
+package unit15_javaio.c8.entity;
 
 import java.io.Serializable;
 
@@ -10,8 +8,8 @@ import java.io.Serializable;
  */
 public class Teacher implements Serializable {
     private String name;
-    private Person student;
-    public Teacher(String name, Person student) {
+    private PersonNormal student;
+    public Teacher(String name, PersonNormal student) {
         this.name = name;
         this.student = student;
     }
@@ -24,11 +22,11 @@ public class Teacher implements Serializable {
         this.name = name;
     }
 
-    public Person getStudent() {
+    public PersonNormal getStudent() {
         return student;
     }
 
-    public void setStudent(Person student) {
+    public void setStudent(PersonNormal student) {
         this.student = student;
     }
 }
