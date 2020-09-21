@@ -40,6 +40,7 @@ public class IntegerValTest
 		// 无法从 int 直接转为 byte
 		// byte binVal5 = 0B10000000000000000000000000000011;
 		// long型第64位才是符号位
+		// 但是 binVal6 赋值符号右边没有加L，其实是一个 int 类型数字，所以还是负数
 		long binVal6 = 0B10000000000000000000000000000011; 
 		System.out.println("binVal6:" + binVal6); // -2147483645
 		// 要用二机制表示long，需要用L
