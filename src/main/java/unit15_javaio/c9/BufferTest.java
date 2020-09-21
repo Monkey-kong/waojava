@@ -16,7 +16,8 @@ public class BufferTest {
 		System.out.println("放入三个元素后：");
 		// 8 8 3
 		System.out.println("capacity：" + buff.capacity() + "\n" + "limit：" + buff.limit() + "\n" + "position：" + buff.position());
-		
+
+		// 为读取数据做准备 limit=position position=0
 		buff.flip();
 		System.out.println("flip后：");
 		// 8 3 0
@@ -27,6 +28,7 @@ public class BufferTest {
 		// 8 3 1
 		System.out.println("capacity：" + buff.capacity() + "\n" + "limit：" + buff.limit() + "\n" + "position：" + buff.position());
 
+		// 为写入数据做准备 limit=capacity position=0
 		buff.clear();
 		System.out.println("clear后：");
 		// 8 8 0
