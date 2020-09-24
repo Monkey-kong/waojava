@@ -11,14 +11,17 @@ import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * @author Alvin.Li
+ * FileChannel 的使用
+ */
 public class FileChannelTest {
 	public static void main(String[] args) {
-		File f = new File("./src/unit15_javaio/c9/FileChannelTest.java");
-		try(
-			FileInputStream fis = new FileInputStream(f);
+		File f = new File("./src/main/java/unit15_javaio/c9/FileChannelTest.java");
+		try (FileInputStream fis = new FileInputStream(f);
 			// 获取 Channel
 			FileChannel inChannel = fis.getChannel();
-			FileChannel outChannel = new FileOutputStream("1.txt").getChannel())
+			FileChannel outChannel = new FileOutputStream("./src/main/java/unit15_javaio/c9/copy.txt").getChannel())
 		{
 			MappedByteBuffer buffer = inChannel.map(FileChannel.MapMode.READ_ONLY, 0, f.length());
 			outChannel.write(buffer);
@@ -29,9 +32,7 @@ public class FileChannelTest {
 			// 使用解码器将 ByteBuffer 转换为 CharBuffer
 			CharBuffer charBuffer = decoder.decode(buffer);
 			System.out.println(charBuffer.toString());
-		}
-		catch (IOException ex)
-		{
+		} catch (IOException ex) {
 			ex.printStackTrace();
 		}
 	}

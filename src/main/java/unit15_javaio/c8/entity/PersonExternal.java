@@ -12,7 +12,7 @@ import java.io.ObjectOutput;
 public class PersonExternal implements Externalizable {
     private String name;
     private int age;
-    // 注意必须提供无参构造器,否则反序列化时会失败
+    // Externalizable 形式序列化注意必须提供无参构造器,否则反序列化时会失败
     public PersonExternal(){}
     public PersonExternal(String name, int age) {
         System.out.println("有参构造器");
@@ -31,4 +31,13 @@ public class PersonExternal implements Externalizable {
         this.name = ((StringBuffer)in.readObject()).reverse().toString();
         this.age = in.readInt();
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
 }

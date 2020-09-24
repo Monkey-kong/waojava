@@ -13,7 +13,7 @@ import java.nio.charset.StandardCharsets;
  */
 public class CharsetTransform {
     public static void main(String[] args) throws Exception{
-        final Charset cn = Charset.forName("GBK");
+        final Charset cn = StandardCharsets.UTF_8;
         final CharsetEncoder cnEncoder = cn.newEncoder();
         final CharsetDecoder cnDecoder = cn.newDecoder();
         // 创建一个 CharBuffer 对象
@@ -25,7 +25,7 @@ public class CharsetTransform {
         // 将 CharBuffer 中的字符序列转换成字节序列
         final ByteBuffer bbuff = cnEncoder.encode(cbuff);
         // 循环访问 ByteBuffer 中的每个字节
-        for (int i = 0; i < bbuff.capacity(); i++) {
+        for (int i = 0; i < bbuff.limit(); i++) {
             System.out.println(bbuff.get(i) + " ");
         }
         // 将 ByteBuffer 的数据解码成字符序列

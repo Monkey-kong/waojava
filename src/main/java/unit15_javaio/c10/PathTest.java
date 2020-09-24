@@ -3,6 +3,9 @@ package unit15_javaio.c10;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+/**
+ * @author Alvin.Li
+ */
 public class PathTest {
 	public static void main(String[] args) {
 		// 以当前路径来创建 Path 对象

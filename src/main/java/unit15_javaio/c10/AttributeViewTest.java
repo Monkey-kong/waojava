@@ -13,11 +13,12 @@ import java.util.List;
 /**
  * @author alvin
  * @date 2020-05-17 21:05
+ * 访问文件属性
  */
 public class AttributeViewTest {
     public static void main(String[] args) throws Exception {
         // 获取将要操作的文件
-        final Path testPath = Paths.get("./src/unit15_javaio/c10/AttributeViewTest.java");
+        final Path testPath = Paths.get("./src/main/java/unit15_javaio/c10/AttributeViewTest.java");
 
         // 获取访问基本属性的 view
         final BasicFileAttributeView basicView = Files.getFileAttributeView(testPath, BasicFileAttributeView.class);

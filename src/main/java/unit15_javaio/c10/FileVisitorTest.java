@@ -8,10 +8,15 @@ import java.nio.file.Paths;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 
+/**
+ * @author Alvin.Li
+ * 找文件
+ */
 public class FileVisitorTest {
 	public static void main(String[] args) throws IOException {
-		Files.walkFileTree(Paths.get("D:\\01_code\\01_javasebasic\\waojava"), new SimpleFileVisitor<Path>()
+		Files.walkFileTree(Paths.get("."), new SimpleFileVisitor<Path>()
 		{
+			@Override
 			public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException
 			{
 				System.out.println("正在访问" + file + "文件");
@@ -23,6 +28,7 @@ public class FileVisitorTest {
 				return FileVisitResult.CONTINUE;
 			}
 			
+			@Override
 			public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException
 			{
 				System.out.println("正在访问：" + dir + "目录");

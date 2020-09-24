@@ -4,6 +4,9 @@ import java.nio.charset.Charset;
 import java.util.Properties;
 import java.util.SortedMap;
 
+/**
+ * @author Alvin.Li
+ */
 public class CharsetTest {
 	public static void main(String[] args) {
 		// 获取Java 支持的全部字符集

@@ -14,9 +14,8 @@ import java.nio.charset.CharsetDecoder;
  */
 public class ReadFile {
     public static void main(String[] args) throws IOException {
-        try(
-            // 创建文件输入流
-            FileInputStream fis = new FileInputStream("D:\\01_code\\01_javasebasic\\waojava\\src\\unit15_javaio\\c9\\ReadFile.java");
+        // 创建文件输入流
+        try (FileInputStream fis = new FileInputStream("./src/main/java/unit15_javaio/c9/ReadFile.java");
             // 创建一个 FileChannel
             FileChannel fcin = fis.getChannel())
         {

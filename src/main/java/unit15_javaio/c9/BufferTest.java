@@ -2,6 +2,13 @@ package unit15_javaio.c9;
 
 import java.nio.CharBuffer;
 
+/**
+ * @author Alvin.Li
+ * CharBuffer 的基本使用
+ * 		关键概念：position limit capacity mark
+ * 		filp()：为读取 Buffer 中数据作准备 limit=position position=0
+ * 		clear(): 为将数据写入 Buffer 做准备 limit=capacity position=0
+ */
 public class BufferTest {
 	public static void main(String[] args) {
 		// 创建 Buffer
