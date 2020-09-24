@@ -9,11 +9,10 @@ import java.nio.charset.StandardCharsets;
  * @date 2020-05-01 10:31
  */
 public class URLDecoderTest {
-    public static void main(String[] args) throws Exception {
-//        String keyWord = URLEncoder.encode("悟空", StandardCharsets.UTF_8);
-        String keyWord = URLEncoder.encode("悟空", "UTF-8");
+    public static void main(String[] args) {
+        String keyWord = URLEncoder.encode("悟空", StandardCharsets.UTF_8);
         System.out.println(keyWord);
-        String gbk = URLDecoder.decode(keyWord, "UTF-8");
+        String gbk = URLDecoder.decode(keyWord, StandardCharsets.UTF_8);
         System.out.println(gbk);
     }
 }

@@ -22,7 +22,7 @@ public class DownUtil {
     // 定义下载的文件的总大小
     private int fileSize;
 
-    public DownUtil(String path, String targetFile, int threadNum){
+    public DownUtil(String path, String targetFile, int threadNum) {
         this.path = path;
         this.targetFile = targetFile;
         this.threadNum = threadNum;
@@ -62,7 +62,7 @@ public class DownUtil {
     }
 
     // 获取下载的完成百分比
-    public double getCompleteRate(){
+    public double getCompleteRate() {
         // 统计多个线程已经下载的总大小
         int sumSize = 0;
         for (int i = 0; i < threadNum; i++) {
@@ -81,7 +81,7 @@ public class DownUtil {
         private RandomAccessFile currentPart;
         // 当前线程已经下载的字节数
         public int length;
-        public DownThread(int startPos, int currentPartSize, RandomAccessFile currentPart){
+        public DownThread(int startPos, int currentPartSize, RandomAccessFile currentPart) {
             this.startPos = startPos;
             this.currentPartSize = currentPartSize;
             this.currentPart = currentPart;
@@ -89,7 +89,7 @@ public class DownUtil {
 
         @Override
         public void run() {
-            try{
+            try {
                 URL url = new URL(path);
                 HttpURLConnection conn = (HttpURLConnection)url.openConnection();
                 conn.setConnectTimeout(5 * 1000);
@@ -105,14 +105,14 @@ public class DownUtil {
                 int hasRead = 0;
                 // 读取网络数据，并写入本地文件
                 while (length < currentPartSize
-                    && (hasRead = inStream.read(buffer)) != -1){
+                    && (hasRead = inStream.read(buffer)) != -1) {
                     currentPart.write(buffer, 0, hasRead);
                     // 累计该线程下载的总大小
                     length += hasRead;
                 }
                 currentPart.close();
                 inStream.close();
-            } catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

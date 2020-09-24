@@ -1,4 +1,6 @@
-package unit17_socket.c173;
+package unit17_socket.c173.biomultithread;
+
+import unit17_socket.c173.biomultithread.MyServer;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,8 +11,8 @@ import java.net.Socket;
 /**
  * @author alvin
  * @date 2020-05-01 15:43
+ * 负责处理每个线程通信的线程类
  */
-// 负责处理每个线程通信的线程类
 public class ServerThread implements Runnable{
     // 定义当前线程所处理的 socket
     Socket s = null;

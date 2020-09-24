@@ -1,4 +1,4 @@
-package unit17_socket.c173;
+package unit17_socket.c173.biomultithread;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -12,7 +12,9 @@ import java.util.List;
  * @date 2020-05-01 15:39
  */
 public class MyServer {
-    // 定义保存所有 Socket 的集合
+    /**
+     * 定义保存所有 Socket 的集合
+     */
     public static List<Socket> socketList = Collections.synchronizedList(new ArrayList<>());
 
     public static void main(String[] args) throws IOException {
