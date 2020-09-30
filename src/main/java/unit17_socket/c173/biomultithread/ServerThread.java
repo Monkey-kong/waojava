@@ -1,7 +1,5 @@
 package unit17_socket.c173.biomultithread;
 
-import unit17_socket.c173.biomultithread.MyServer;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -43,6 +41,7 @@ public class ServerThread implements Runnable{
     // 定义读取客户端数据的方法
     private String readFromClient() {
         try {
+            System.out.println("客户端说："+br.readLine());
             return br.readLine();
         } catch (IOException e) {
             // 如果报错，表明该 Socket 对应的客户端已经关闭，移除对应服务端 socket

@@ -17,17 +17,20 @@ public class Client {
         final BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         final String line = br.readLine();
         System.out.println("服务器说：" + line);
+        final PrintStream ps = new PrintStream(socket.getOutputStream());
 
 
         // Thread.sleep(6000); // 验证 SoTimeout，让 Client 超时
-        Scanner sc = new Scanner(System.in);
-        while (sc.hasNextLine()) {
-            final PrintStream ps = new PrintStream(socket.getOutputStream());
-            ps.print("我是01号客户端，请求连接。");
+        final BufferedReader bufr = new BufferedReader(new InputStreamReader(System.in));
+        String iLine = null;
+        while ((iLine = bufr.readLine()) != null) {
+            // ps.print("我是01号客户端，请求连接。");
+            System.out.println("================");
+            ps.print(iLine);
             ps.flush();
-            ps.close();
         }
 
+        ps.close();
         br.close();
         socket.close();
     }
