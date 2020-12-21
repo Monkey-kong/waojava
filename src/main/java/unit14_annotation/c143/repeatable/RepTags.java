@@ -12,6 +12,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface RepTags {
-    // 定义 value 成员变量，该成员变量可接收多个 @RepTags 注解
+    // 定义 value 成员变量，该成员变量可接收多个 @RepTag 注解
     RepTag[] value();
 }

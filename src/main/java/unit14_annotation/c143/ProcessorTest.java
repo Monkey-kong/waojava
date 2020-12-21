@@ -5,6 +5,7 @@ import java.lang.reflect.Method;
 /**
  * @author alvin
  * @date 2020-05-04 9:17
+ * 为了让程序注解起作用，接下来必须为这些注解提供一个注解处理工具。
  */
 public class ProcessorTest {
     public static void process(String clazz) throws ClassNotFoundException {

@@ -16,6 +16,7 @@ public class AnnotationTest {
     // 使用 @ActionListenerFor 注解为 cancel 按钮绑定事件监听器
     @ActionListenerFor(listener = CancelListener.class)
     private JButton cancel = new JButton("取消");
+
     public void init(){
         // 初始化界面的方法
         JPanel jp = new JPanel();
