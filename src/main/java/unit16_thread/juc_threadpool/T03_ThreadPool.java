@@ -33,8 +33,9 @@ public class T03_ThreadPool {
         ThreadPoolExecutor pool = new ThreadPoolExecutor(2, 4,
                 20, TimeUnit.SECONDS,
                 new ArrayBlockingQueue<>(4),  // 队列大小
-                Executors.defaultThreadFactory(), // 线程工厂
-                new ThreadPoolExecutor.CallerRunsPolicy()); // 拒绝策略
+//                Executors.defaultThreadFactory(), // 线程工厂
+                new UserThreadFactory("test"),
+                new ThreadPoolExecutor.DiscardOldestPolicy()); // 拒绝策略
 
         // 启动八个线程
         for (int i = 0; i < 8; i++) {

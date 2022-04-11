@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class T07_ScheduledThreadPool {
     public static void main(String[] args) {
         ScheduledExecutorService es = Executors.newScheduledThreadPool(5);
-        es.scheduleAtFixedRate(()->{
+        es.scheduleWithFixedDelay(()->{
             System.out.println(Thread.currentThread().getName());
         }, 500, 2000, TimeUnit.MILLISECONDS);
     }
