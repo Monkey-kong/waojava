@@ -7,7 +7,6 @@ import java.util.concurrent.CompletableFuture;
 /**
  * 学习文章：
  * 1、https://liaoxuefeng.com/books/java/threading/completable-future/index.html#0
- * 2、https://tech.meituan.com/2022/05/12/principles-and-practices-of-completablefuture.html
  */
 public class CFTest {
     
